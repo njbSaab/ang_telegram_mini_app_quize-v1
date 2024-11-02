@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { TelegramService } from './services/telegram.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,9 @@ import { FooterComponent } from './shared/footer/footer.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'ang_telegram-mini-app';
+  telegram = inject(TelegramService);
 
-  public arr = [1,2,3,4,5,6]
+  constructor() {
+    this.telegram.ready();
+  }
 }

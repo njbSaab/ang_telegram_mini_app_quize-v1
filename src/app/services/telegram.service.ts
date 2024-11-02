@@ -5,6 +5,10 @@ interface TgButton {
   show(): void;
   hide(): void;
   setText(text: string): void;
+  onClick():void
+  offClick():void
+  enable(): void;
+  disable(): void;
 }
 
 @Injectable({
@@ -22,4 +26,14 @@ export class TelegramService {
   get MainBtn(): TgButton {
     return this.tg.MainButton;
   }
+  get BackBtn(): TgButton {
+    return this.tg.BackButton;
+  }
+  sendData(data: object) {
+      this.tg.sendData(JSON.stringify(data));
+  }
+  ready(){
+    this.tg.ready();
+  }
+
 }

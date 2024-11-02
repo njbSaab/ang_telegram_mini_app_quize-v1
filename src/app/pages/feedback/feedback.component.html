@@ -1,0 +1,46 @@
+<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-lg">
+    <h1 class="text-center text-2xl font-bold text-french-violet sm:text-3xl">
+      Get started your feedback
+    </h1>
+
+    <p class="mx-auto mt-4 max-w-md text-center text-gray-500">
+      We are committed to developing the app, and your feedback is very
+      important to us. Please let us know what you think.
+    </p>
+
+    <form
+      action="#"
+      class="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
+    >
+      <p class="text-center text-lg font-medium">Enter your message</p>
+
+      <div>
+        <label for="text" class="sr-only">Message</label>
+
+        <div class="relative">
+          <textarea
+            class="text-black w-full rounded-lg border-gray-200 py-4 pl-2 pr-10 text-sm shadow-sm resize-none overflow-hidden"
+            placeholder="Enter your feedback"
+            rows="1"
+            [value]="feedback()"
+            (input)="setFeedback($event)"
+          ></textarea>
+
+          <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
+            <img
+              src="https://icongr.am/material/forum.svg?size=20&color=808080"
+              alt=""
+            />
+          </span>
+        </div>
+      </div>
+      <!-- <button
+        type="submit"
+        class="block w-full rounded-lg bg-vivid-pink px-5 py-3 text-sm font-medium text-white"
+      >
+        Send
+      </button> -->
+    </form>
+  </div>
+</div>

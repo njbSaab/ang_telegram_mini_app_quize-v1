@@ -1,3 +1,4 @@
+import { FeedbackComponent } from './pages/feedback/feedback.component';
 import { Routes } from '@angular/router';
 import { QuizesComponent } from './pages/quizes/quizes.component';
 import { ResultsComponent } from './pages/results/results.component';
@@ -9,6 +10,9 @@ export const routes: Routes = [
   },
   {
     path: 'result', component: ResultsComponent
+  },
+  {
+    path: 'feedback', component: FeedbackComponent
   },
   {
     path: 'quiz/:id', component: SingleQuizeComponent
