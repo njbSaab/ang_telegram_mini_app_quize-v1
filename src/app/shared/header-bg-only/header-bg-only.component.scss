@@ -1,0 +1,15 @@
+.header-bg {
+  height: 150px;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  // transform: rotate(180deg);
+  top: 0;
+  border-radius: 0 0 30% 30%;
+  nav ul {
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 5px;
+  }
+}

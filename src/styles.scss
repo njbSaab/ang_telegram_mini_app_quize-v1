@@ -14,7 +14,7 @@
   --gray-900: oklch(19.37% 0.006 300.98);
   --gray-700: oklch(36.98% 0.014 302.71);
   --gray-400: oklch(70.9% 0.015 304.04);
-
+  --light: #FFFFFF
   --red-to-pink-to-purple-vertical-gradient: linear-gradient(
     180deg,
     var(--orange-red) 0%,
@@ -35,6 +35,12 @@
     var(--vivid-pink) 100%
   );
 
+  --top-purple-vertical-gradient: linear-gradient(
+    0deg,
+    var(--vivid-pink) 0%,
+    var(--electric-violet) 100%
+  );
+
   --purple-horizontal-gradient: linear-gradient(
     180deg,
     var(--electric-violet) 0%,
@@ -45,12 +51,22 @@
 
   app-quizes {
     flex: 1;
+    z-index: 0;
   }
   app-result {
     flex: 1;
+
   }
   app-single-quize {
     flex: 1;
+    z-index: 0;
+  }
+  app-feedback {
+    flex: 1;
+  }
+  app-quiz {
+    flex: 1;
+    z-index: 0;
   }
 }
 
@@ -64,4 +80,12 @@ body {
     color: inherit;
     background: inherit;
   }
+}
+
+.mtop-90{
+  margin-top: 90px;
+}
+
+.logo {
+  width: 70px;
 }

@@ -1,14 +1,15 @@
 // single-quize.component.ts
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { QuizesService, IQuiz } from '../../services/quizes.service';
 import { TelegramService } from '../../services/telegram.service';
 import { CommonModule } from '@angular/common';
+import { HeaderBgOnlyComponent } from '../../shared/header-bg-only/header-bg-only.component';
 
 @Component({
   selector: 'app-single-quize',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, HeaderBgOnlyComponent],
   templateUrl: './single-quize.component.html',
   styleUrls: ['./single-quize.component.scss']
 })

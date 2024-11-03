@@ -6,8 +6,23 @@ header {
     left: 0;
     right: 0;
     top: 0;
-    margin-top: 0.5%;
-    width: 99%;
+    margin-top: 0;
+    width: 100%;
     max-width: 600px;
+    padding: 5px 0;
+    height: fit-content;
+  }
+  .bg {
+    height: 150px;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    transform: rotate(180deg);
+    top: 80px;
+    border-radius: 30% 30% 0 0;
+  }
+  .text-sm {
+    font-size: 16px;
   }
 }

@@ -1,12 +1,23 @@
-import { Component } from '@angular/core';
+// results.component.ts
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HeaderBgOnlyComponent } from '../../shared/header-bg-only/header-bg-only.component';
+import { FormValidationComponent } from '../../components/form-validation/form-validation.component';
 
 @Component({
   selector: 'app-results',
   standalone: true,
-  imports: [],
   templateUrl: './results.component.html',
-  styleUrl: './results.component.scss'
+  imports: [HeaderBgOnlyComponent, FormValidationComponent],
+  styleUrls: ['./results.component.scss']
 })
-export class ResultsComponent {
+export class ResultsComponent implements OnInit {
+  correctAnswers = 0;
 
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    const state = this.router.getCurrentNavigation()?.extras.state;
+    this.correctAnswers = state?.['correctAnswers'] || 0;
+  }
 }

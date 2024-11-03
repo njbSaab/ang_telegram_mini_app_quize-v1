@@ -13,6 +13,7 @@ const database = getDatabase(app);
 export class DataService {
   constructor() {}
 
+  // Получение всех квизов
   async getQuizzes() {
     const dbRef = firebaseRef(database);
     try {
@@ -26,6 +27,24 @@ export class DataService {
       }
     } catch (error) {
       console.error("Ошибка при получении данных:", error);
+      return null;
+    }
+  }
+
+  // Получение вопросов конкретного квиза по quizId
+  async getQuizQuestions(quizId: string) {
+    const dbRef = firebaseRef(database, `quizzes/${quizId}/questions`);
+    try {
+      const snapshot = await get(dbRef);
+      if (snapshot.exists()) {
+        console.log("Вопросы, полученные для квиза:", snapshot.val()); // выводим вопросы в консоль
+        return snapshot.val();
+      } else {
+        console.log("Нет доступных вопросов для данного квиза");
+        return null;
+      }
+    } catch (error) {
+      console.error("Ошибка при получении вопросов квиза:", error);
       return null;
     }
   }

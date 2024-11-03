@@ -21,6 +21,7 @@ module.exports = {
         "horizontal-gradient":
           "var(--red-to-pink-to-purple-horizontal-gradient)",
         "purple-gradient": "var(--purple-vertical-gradient)",
+        "top-purple-gradient": "var(--top-purple-vertical-gradient)",
         "purple-gradient": "var(--purple-horizontal-gradient)",
       },
     },

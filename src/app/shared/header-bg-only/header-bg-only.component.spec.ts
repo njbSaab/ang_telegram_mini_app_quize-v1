@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ResultsComponent } from './results.component';
+import { HeaderBgOnlyComponent } from './header-bg-only.component';
 
-describe('ResultsComponent', () => {
-  let component: ResultsComponent;
-  let fixture: ComponentFixture<ResultsComponent>;
+describe('HeaderBgOnlyComponent', () => {
+  let component: HeaderBgOnlyComponent;
+  let fixture: ComponentFixture<HeaderBgOnlyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ResultsComponent]
+      imports: [HeaderBgOnlyComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ResultsComponent);
+    fixture = TestBed.createComponent(HeaderBgOnlyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

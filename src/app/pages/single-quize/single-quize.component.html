@@ -1,6 +1,8 @@
+<!-- single-quize.component.html -->
+<app-header-bg-only></app-header-bg-only>
 <article
   *ngIf="quiz"
-  class="overflow-hidden rounded-lg shadow transition hover:shadow-lg"
+  class="single-quiz overflow-hidden rounded-lg shadow transition hover:shadow-lg"
 >
   <img
     alt="{{ quiz.title }}"
@@ -13,5 +15,14 @@
     <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
       {{ quiz.description }}
     </p>
+  </div>
+
+  <div class="btn-wrapper">
+    <button
+      [routerLink]="['/quiz', quiz.id, 'play']"
+      class="block w-full rounded-lg bg-vivid-pink px-5 py-3 text-sm font-medium text-white"
+    >
+      Play
+    </button>
   </div>
 </article>

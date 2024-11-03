@@ -1,0 +1,60 @@
+{
+  "quizzes": {
+    "quiz1": {
+      "id": 1,
+      "title": "한국 스포츠 상식퀴즈에 도전해보세요!",
+      "description": "한국의 활기찬 게임과 엔터테인먼트 문화 속으로 여행을 떠나보세요!...",
+      "img": "http://quizwhizworld.top/wp-content/uploads/2023/12/bg-top-for-win-2.png",
+      "questions": {
+        "questionId_1": {
+          "img": "http://example.com/question1.png",
+          "questionText": "What is the capital of France?",
+          "answers": [
+            { "text": "Berlin", "isCorrect": 0 },
+            { "text": "Madrid", "isCorrect": 0 },
+            { "text": "Paris", "isCorrect": 1 },
+            { "text": "Rome", "isCorrect": 0 }
+          ]
+        },
+        "questionId_2": {
+          "img": "http://example.com/question2.png",
+          "questionText": "What is 2 + 2?",
+          "answers": [
+            { "text": "3", "isCorrect": 0 },
+            { "text": "4", "isCorrect": 1 },
+            { "text": "5", "isCorrect": 0 },
+            { "text": "6", "isCorrect": 0 }
+          ]
+        }
+      }
+    },
+    "quiz2": {
+      "id": 2,
+      "title": "찐 한국 스포츠 팬들만 풀수있",
+      "description": "한국의 활기찬 게임과 엔터테인먼트 문화 속으로 여행을 떠나보세요!...",
+      "img": "https://quizwhizworld.top/wp-content/uploads/2024/06/%D0%BA%D0%B2-%D1%81%D0%BF%D0%BE%D1%80%D1%82-1.jpg",
+      "questions": {
+        "questionId_1": {
+          "img": "http://example.com/question1.png",
+          "questionText": "What is the largest planet?",
+          "answers": [
+            { "text": "Earth", "isCorrect": 0 },
+            { "text": "Mars", "isCorrect": 0 },
+            { "text": "Jupiter", "isCorrect": 1 },
+            { "text": "Saturn", "isCorrect": 0 }
+          ]
+        },
+        "questionId_2": {
+          "img": "http://example.com/question2.png",
+          "questionText": "Which country is known as the Land of the Rising Sun?",
+          "answers": [
+            { "text": "China", "isCorrect": 0 },
+            { "text": "Japan", "isCorrect": 1 },
+            { "text": "Thailand", "isCorrect": 0 },
+            { "text": "South Korea", "isCorrect": 0 }
+          ]
+        }
+      }
+    }
+  }
+}
