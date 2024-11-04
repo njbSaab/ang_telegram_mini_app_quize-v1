@@ -7,7 +7,11 @@
         <nav aria-label="Global">
           <ul class="flex items-center gap-6 text-sm">
             <li>
-              <a class="text-white transition hover:text-gray-500/75" href="#">
+              <a
+                class="text-white transition my-hover hover:text-gray-800/75"
+                href="#"
+                [routerLink]="['/about']"
+              >
                 About
               </a>
             </li>
@@ -17,8 +21,12 @@
             </li>
 
             <li>
-              <a class="text-white transition hover:text-gray-500/75" href="#">
-                Play
+              <a
+                class="text-white transition my-hover hover:text-gray-800/75"
+                href="#"
+                [routerLink]="['/quiz', '1', 'play']"
+              >
+                Fastplay
               </a>
             </li>
           </ul>

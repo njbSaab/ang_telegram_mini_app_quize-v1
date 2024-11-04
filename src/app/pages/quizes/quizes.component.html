@@ -3,23 +3,47 @@
 <div class="container mtop-90 quiz-container text-center m-auto" *ngIf="quiz">
   <div class="quiz" *ngIf="currentQuestionIndex < questions.length">
     <div class="quiz-questions">
-      <span class="timer line">{{ time }}</span>
-      <div class="questions-body">
-        <p class="text-xl">
+      <span
+        class="timer line text-main-color"
+        [ngClass]="{ finished: isAlmostFinished }"
+        >{{ time }}</span
+      >
+      <div class="line-horizontal-wrapper">
+        <span
+          class="line line-horizontal"
+          [ngClass]="{ finished: isAlmostFinished }"
+          [style.width.%]="lineWidth"
+        ></span>
+      </div>
+      <div class="questions-body bg-light">
+        <p class="text-xl text-main-color">
           {{ questions[currentQuestionIndex].questionText }}
         </p>
       </div>
     </div>
     <ul class="quiz-list flex flex-col gap-4">
-      <li *ngFor="let answer of questions[currentQuestionIndex].answers">
-        <div class="quiz-answer" (click)="onAnswerSelected(answer.isCorrect)">
-          <p>{{ answer.text }}</p>
+      <li
+        *ngFor="
+          let answer of questions[currentQuestionIndex].answers;
+          let i = index
+        "
+      >
+        <div
+          class="quiz-answer bg-light"
+          [ngStyle]="{ 'border-color': answerColors[i] }"
+          [ngClass]="{ active: i === selectedAnswerIndex }"
+          (click)="onAnswerSelected(answer.isCorrect, i)"
+        >
+          <p class="text-main-color">{{ answer.text }}</p>
           <label
             for="ColorBlack"
             class="flex cursor-pointer items-center justify-center rounded-md border border-gray-300 bg-white px-3 py-2"
           >
             <input type="radio" name="ColorOption" />
-            <span class="checked">
+            <span
+              class="checked"
+              [ngClass]="{ active: i === selectedAnswerIndex }"
+            >
               <img
                 src="https://icongr.am/entypo/check.svg?size=16&color=fcfcfc"
                 alt=""

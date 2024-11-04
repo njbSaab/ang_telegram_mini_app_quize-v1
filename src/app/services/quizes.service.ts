@@ -19,6 +19,9 @@ export interface IQuiz {
   img: string;
   title: string;
   description: string;
+  description_long?: string;
+  rate?: number;
+  time?: string;
   questions?: IQuestion[];
 }
 
@@ -49,7 +52,7 @@ export class QuizesService {
     const quiz = this.quizzesSubject.value.find((quiz) => quiz.id === id);
     console.log("Fetched Quiz:", quiz); // Логируем весь квиз, включая вопросы
     return quiz;
-  }  
+  }
   // Новый метод для получения вопросов квиза по ID
   async getQuestionsByQuizId(quizId: string): Promise<IQuestion[] | null> {
     const questionsData = await this.dataService.getQuizQuestions(quizId);

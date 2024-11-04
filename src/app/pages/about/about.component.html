@@ -1,0 +1,77 @@
+<app-header-bg-only></app-header-bg-only>
+
+<div class="about-container mtop-90 bg-light">
+  <div class="mx-auto max-w-screen-xl px-4 form-validation">
+    <div class="mx-auto max-w-lg">
+      <h1 class="text-center text-2xl font-bold text-white sm:text-3xl">
+        Quiz
+      </h1>
+
+      <div class="about-content-card">
+        <div class="about-content text-center">
+          <h2 class="text-3xl sm:text-2xl mt-10 font-bold text-main-color">
+            Quiz is beneficial:
+          </h2>
+          <p class="mx-auto max-w-md text-center text-gray-600 mt-2">
+            Playing quizzes in Korean can be a fun and beneficial way to improve
+            various skills. Here are some reasons why taking quizzes in Korean
+            is useful:
+          </p>
+        </div>
+        <div
+          class="max-w-screen-xl px-1 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+        >
+          <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+            <a
+              class="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
+              [routerLink]="['']"
+              *ngFor="let colorBg of colorsBgGradient; let i = index"
+            >
+              <span
+                class="about-list-icon inline-block rounded-l p-3"
+                [ngStyle]="{ background: colorBg }"
+              >
+                <svg
+                  _ngcontent-ng-c1675500136=""
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  class="size-12 text-white"
+                >
+                  <path
+                    _ngcontent-ng-c1675500136=""
+                    data-v-189995f2=""
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M13.3449 13.2828C18.8747 7.81584 27.7905 7.83364 33.2963 13.3394C37.5093 17.5524 38.5091 23.7594 36.2989 28.92C36.1615 29.241 35.9707 29.5166 35.7429 29.7444C34.7587 30.7286 33.0857 30.8064 32.0179 29.7388C31.2529 28.9736 31.0011 27.8166 31.4253 26.8212C32.8015 23.5982 32.1749 19.7218 29.5445 17.0914C26.1007 13.6476 20.5241 13.6402 17.0669 17.063C13.6441 20.5202 13.6515 26.0968 17.0953 29.5406C19.7257 32.171 23.6021 32.7976 26.8251 31.4214C27.8207 30.9972 28.9775 31.249 29.7425 32.014C30.8103 33.0818 30.7325 34.7548 29.7483 35.739C29.5205 35.9666 29.2449 36.1578 28.9239 36.295C23.7633 38.5052 17.5563 37.5054 13.3435 33.2924C7.83752 27.7868 7.81972 18.8708 13.2867 13.341L13.2853 13.3394C13.2949 13.3296 13.3053 13.3208 13.3151 13.3112C13.3247 13.3014 13.3337 13.2912 13.3435 13.2814L13.3449 13.2828Z"
+                    fill="white"
+                  ></path>
+                  <path
+                    _ngcontent-ng-c1675500136=""
+                    data-v-189995f2=""
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M37.8628 37.859C36.6044 39.1174 34.5638 39.1174 33.3054 37.859C32.0468 36.6004 32.0468 34.56 33.3054 33.3016C34.5638 32.043 36.6044 32.043 37.8628 33.3016C39.1212 34.56 39.1212 36.6004 37.8628 37.859Z"
+                    fill="white"
+                  ></path>
+                </svg>
+              </span>
+
+              <h2
+                class="about-list-title mt-2 font-bold"
+                [ngStyle]="{ color: colorsTitle[i] }"
+              >
+                {{ titleText[i] }}
+              </h2>
+
+              <p class="about-list-description text-gray-500">
+                {{ descriptionText[i] }}
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

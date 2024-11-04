@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { TelegramService } from '../../services/telegram.service';
+import { HeaderBgOnlyComponent } from '../../shared/header-bg-only/header-bg-only.component';
 
 @Component({
   selector: 'app-feedback',
   standalone: true,
-  imports: [],
+  imports: [HeaderBgOnlyComponent],
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.scss']
 })
