@@ -93,6 +93,14 @@ body {
     flex: 1;
     z-index: 0;
   }
+  app-single-quize app-header-bg-only{
+    ul li:first-child{
+      opacity: .5;
+    }
+    .my-hover-btn:hover{
+      background: none;
+    }
+  }
 }
 
 body {
@@ -154,4 +162,11 @@ body {
 }
 .main{
   background: #ffffff !important;
+}
+.scale-hover{
+  transition: .3s ease-in-out;
+  &:hover{
+    transform: scale(1.1);
+    transition: .3s ease-in-out;
+  }
 }

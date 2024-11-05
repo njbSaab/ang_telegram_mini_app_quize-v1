@@ -1,7 +1,7 @@
 <div class="mx-auto max-w-screen-xl px-4 form-validation">
   <div class="mx-auto max-w-lg form-validation-container">
     <h1 class="text-center text-2xl font-bold text-french-violet sm:text-3xl">
-      Enter your email:
+      {{ isCodeVisible ? "Enter your code" : "Enter your email" }}
     </h1>
 
     <p class="mx-auto mt-4 max-w-md text-center text-gray-500">
@@ -10,73 +10,62 @@
     </p>
 
     <form
-      action="#"
+      [formGroup]="form"
+      (ngSubmit)="getCode()"
       class="mb-0 mt-3 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
     >
       <p class="text-center text-lg font-medium text-main-color">
-        Enter your details:
+        {{ isCodeVisible ? "Enter your code below:" : "Enter your details:" }}
       </p>
 
-      <div>
+      <!-- Поля для имени и email отображаются, пока isCodeVisible === false -->
+      <div *ngIf="!isCodeVisible">
         <label for="name" class="sr-only">Name</label>
         <div class="relative">
           <input
-            type="name"
+            formControlName="name"
+            type="text"
             class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
             placeholder="Enter name"
           />
-          <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="100%"
-              viewBox="0 0 24 24"
-              class="size-4 text-gray-400"
-            >
-              <path
-                fill="currentColor"
-                d="M15.39 14.56C13.71 13.7 11.53 13 9 13s-4.71.7-6.39 1.56A2.97 2.97 0 0 0 1 17.22V20h16v-2.78c0-1.12-.61-2.15-1.61-2.66M9 12c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4m11-3V7c0-.55-.45-1-1-1s-1 .45-1 1v2h-2c-.55 0-1 .45-1 1s.45 1 1 1h2v2c0 .55.45 1 1 1s1-.45 1-1v-2h2c.55 0 1-.45 1-1s-.45-1-1-1z"
-              />
-            </svg>
-          </span>
         </div>
       </div>
 
-      <div>
+      <div *ngIf="!isCodeVisible">
         <label for="email" class="sr-only">Email</label>
         <div class="relative">
           <input
+            formControlName="email"
             type="email"
             class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
             placeholder="Enter email"
           />
-          <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="size-4 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-              />
-            </svg>
-          </span>
+        </div>
+      </div>
+
+      <!-- Поле для кода отображается, когда isCodeVisible === true -->
+      <div *ngIf="isCodeVisible">
+        <label for="code" class="sr-only">Code</label>
+        <div class="relative">
+          <input
+            formControlName="code"
+            type="text"
+            class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+            placeholder="Enter code"
+          />
         </div>
       </div>
 
       <button
         type="submit"
+        [disabled]="form.invalid || form.pristine"
         class="block w-full rounded-lg bg-vivid-pink px-5 py-3 text-sm font-medium text-white"
+        [style.opacity]="form.invalid || form.pristine ? '0.5' : '1'"
       >
-        Get code
+        {{ isCodeVisible ? "Submit Code" : "Get Code" }}
       </button>
 
-      <p class="text-center write-us text-sm text-gray-500">
+      <p class="text-center text-sm text-gray-500">
         Didn't receive the code?
         <a class="underline" href="#" [routerLink]="['/feedback']">Write us</a>
       </p>

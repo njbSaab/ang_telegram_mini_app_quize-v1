@@ -1,5 +1,5 @@
 header {
-  height: 90px;
+  height: 100px;
 
   .header-nav {
     position: fixed;
@@ -9,8 +9,9 @@ header {
     margin-top: 0;
     width: 100%;
     max-width: 600px;
-    padding: 5px 0;
+    padding: 10px 0;
     height: fit-content;
+    border-radius: 0 0 25px 25px;
   }
   .bg {
     height: 150px;

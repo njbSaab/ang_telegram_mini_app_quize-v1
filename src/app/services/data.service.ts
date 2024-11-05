@@ -19,10 +19,10 @@ export class DataService {
     try {
       const snapshot = await get(child(dbRef, 'quizzes'));
       if (snapshot.exists()) {
-        console.log("Данные, полученные из Firebase:", snapshot.val()); // выводим данные в консоль
+        // console.log("Данные, полученные из Firebase:", snapshot.val()); // выводим данные в консоль
         return snapshot.val();
       } else {
-        console.log("Нет доступных данных");
+        // console.log("Нет доступных данных");
         return null;
       }
     } catch (error) {
@@ -37,7 +37,7 @@ export class DataService {
     try {
       const snapshot = await get(dbRef);
       if (snapshot.exists()) {
-        console.log("Вопросы, полученные для квиза:", snapshot.val()); // выводим вопросы в консоль
+        // console.log("Вопросы, полученные для квиза:", snapshot.val()); // выводим вопросы в консоль
         return snapshot.val();
       } else {
         console.log("Нет доступных вопросов для данного квиза");

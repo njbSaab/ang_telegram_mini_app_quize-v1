@@ -33,7 +33,7 @@ export class FeedbackComponent implements OnInit, OnDestroy {
   }
 
   sendData() {
-    console.log('Sending data:', this.feedback());
+    // console.log('Sending data:', this.feedback());
     this.telegram.sendData({ feedback: this.feedback() });
   }
 

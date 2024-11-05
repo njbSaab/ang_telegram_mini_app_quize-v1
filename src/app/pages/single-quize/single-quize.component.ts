@@ -29,9 +29,7 @@ export class SingleQuizeComponent implements OnInit, OnDestroy {
       this.quiz = this.quizesService.getQuizById(quizId);
       if (!this.quiz) {
         console.error("Квиз с таким ID не найден!");
-      } else {
-        console.log("Загруженный квиз:", this.quiz);
-      }
+      } 
     }
 
     // Отображаем BackBtn и добавляем обработчик события через onEvent

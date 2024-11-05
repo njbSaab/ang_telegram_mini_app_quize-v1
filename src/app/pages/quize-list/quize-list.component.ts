@@ -24,7 +24,7 @@ export class QuizeListComponent implements OnInit {
   ngOnInit() {
     this.quizesService.quizzes$.subscribe((data) => {
       this.quizzes = data;
-      console.log("Квизы после преобразования:", this.quizzes); // Теперь данные должны быть доступны
+      // console.log("Квизы после преобразования:", this.quizzes); // Теперь данные должны быть доступны
     });
   }
 }
